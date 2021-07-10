@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="@drawable/background"
     tools:context=".users.LoginActivity">
 
     <ImageView
     android:layout_width="300dp"
     android:layout_height="200dp"
-    android:src="@drawable/icon_login"/>
+    android:src="@drawable/conky"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -21,7 +21,8 @@
         android:textSize="20dp"
         android:textStyle="bold"
         android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"/>
+        android:layout_marginLeft="16dp"
+        android:textColor="@color/teal_700"/>
 
 
     <androidx.cardview.widget.CardView
@@ -81,7 +82,7 @@
                 android:id="@+id/loginbtn"
                 app:nb_borderColor="#FFFFFF"
                 app:nb_borderWidth="2dp"
-                app:nb_backgroundColor="#FF3700B3"
+                app:nb_backgroundColor="@color/teal_200"
                 app:nb_focusColor="#B83CC3"
                 app:nb_textColor="#FFFFFF"
                 app:nb_radius="5dp"/>
@@ -93,7 +94,7 @@
                 android:background="@null"
                 android:text="Belum punya akun ? Daftar Disini"
                 android:textAllCaps="false"
-                app:backgroundTint="#009688" />
+                app:backgroundTint="@color/teal_200" />
 
         </LinearLayout>
 

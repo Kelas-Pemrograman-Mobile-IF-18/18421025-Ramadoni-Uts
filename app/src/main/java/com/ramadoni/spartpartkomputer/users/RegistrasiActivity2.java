@@ -79,13 +79,13 @@ public class RegistrasiActivity2 extends AppCompatActivity {
                 if (strUserName.isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Username Tidak Boleh Kosong", Toast.LENGTH_LONG).show();
                 } else if (strNamaLengkap.isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "Nama Tidak Boleh Kosong", Toast.LENGTH_LONG);
+                    Toast.makeText(getApplicationContext(), "Nama Tidak Boleh Kosong", Toast.LENGTH_LONG).show();
                 } else if (strEmail.isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "Email Tidak Boleh Kosong", Toast.LENGTH_LONG);
+                    Toast.makeText(getApplicationContext(), "Email Tidak Boleh Kosong", Toast.LENGTH_LONG).show();
                 } else if (strNoTelp.isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "NoTelp Tidak Boleh Kosong", Toast.LENGTH_LONG);
+                    Toast.makeText(getApplicationContext(), "NoTelp Tidak Boleh Kosong", Toast.LENGTH_LONG).show();
                 } else if (strPassword.isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "Password Tidak Boleh Kosong", Toast.LENGTH_LONG);
+                    Toast.makeText(getApplicationContext(), "Password Tidak Boleh Kosong", Toast.LENGTH_LONG).show();
                 } else {
                     registrasi(strUserName, strNamaLengkap, strEmail, strNoTelp, strPassword);
                 }
@@ -115,11 +115,9 @@ public class RegistrasiActivity2 extends AppCompatActivity {
                         hideDialog();
                         try {
                             String strMsg = response.getString("msg");
-                            boolean status= response.getBoolean("eroor");
-                            Log.d("ini respon ", strMsg);
-                            Log.d("ini statusnya", String.valueOf(status));
+                            boolean status= response.getBoolean("error");
 
-                            if (status) {
+                            if (status == false) {
                                 Toast.makeText(getApplicationContext(), strMsg, Toast.LENGTH_LONG).show();
                                 Intent i = new Intent( RegistrasiActivity2.this, LoginActivity.class);
                                 startActivity(i);
